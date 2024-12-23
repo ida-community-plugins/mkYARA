@@ -17,9 +17,7 @@ from capstone import (
 from PyQt5 import QtGui, QtWidgets
 from PyQt5.QtCore import Qt
 
-major, minor = map(int, idaapi.get_kernel_version().split("."))
-
-IDA_9 = major >= 9
+major, minor = [int(v) for v in idaapi.get_kernel_version().split('.')]
 
 INSTRUCTION_SET_MAPPING = {
     'metapc': CS_ARCH_X86,
@@ -45,12 +43,17 @@ def get_selection():
         end = idaapi.get_item_end(ea)
     return start, end
 
-
-
 def get_arch_info():
-    if IDA_9:
+    if major >= 9:
         proc = idaapi.inf_get_procname().lower()
-        bits = 32 if idaapi.inf_is_32bit_exactly() else 64 if idaapi.inf_is_64bit() else 16 
+        if idaapi.inf_is_64bit():
+            bits = 64
+        elif idaapi.inf_is_32bit_exactly():
+            bits = 32
+        elif idaapi.inf_is_16bit():
+            bits = 16
+        else:
+            raise ValueError
     else:
         info = idaapi.get_inf_structure()
         proc = info.procName.lower()
