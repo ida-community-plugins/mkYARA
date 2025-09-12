@@ -8,7 +8,7 @@
     "description": "Generating YARA rules based on binary code",
     "license": "GPL-3",
     "categories": [
-      "ui-ux-and-visualization",
+      "ui-ux-and-visualization"
     ],
     "keywords": [
       "yara",
