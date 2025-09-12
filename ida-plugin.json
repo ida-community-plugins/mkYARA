@@ -1,10 +1,10 @@
 {
-  "IDAMetadataDescriptorVersion": 2,
+  "IDAMetadataDescriptorVersion": 1,
   "plugin": {
     "name": "mkYARA",
     "entryPoint": "mkyara_plugin.py",
     "version": "1.0.0",
-    "idaVersions": ">=8",
+    "idaVersions": ">=9.2",
     "description": "Generating YARA rules based on binary code",
     "license": "GPL-3",
     "categories": [

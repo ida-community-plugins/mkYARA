@@ -14,8 +14,8 @@ from capstone import (
     CS_MODE_32,
     CS_MODE_64
 )
-from PyQt5 import QtGui, QtWidgets
-from PyQt5.QtCore import Qt
+from PySide6 import QtGui, QtWidgets
+from PySide6.QtCore import Qt
 
 major, minor = [int(v) for v in idaapi.get_kernel_version().split('.')]
 
@@ -101,7 +101,7 @@ class YaraRuleDialog(QtWidgets.QDialog):
         font.setPointSize(10)
         self.text_edit.setFont(font)
         metrics = QtGui.QFontMetrics(font)
-        self.text_edit.setTabStopWidth(4 * metrics.width(' '))
+        self.text_edit.setTabStopDistance(4 * metrics.horizontalAdvance(' '))
 
         self.text_edit.insertPlainText(self.yara_rule)
         self.layout.addWidget(self.text_edit)
