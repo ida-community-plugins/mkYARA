@@ -1,0 +1,29 @@
+{
+  "IDAMetadataDescriptorVersion": 2,
+  "plugin": {
+    "name": "mkYARA",
+    "entryPoint": "mkyara_plugin.py",
+    "version": "1.0.0",
+    "idaVersions": ">=8",
+    "description": "Generating YARA rules based on binary code",
+    "license": "GPL-3",
+    "categories": [
+      "ui-ux-and-visualization",
+    ],
+    "keywords": [
+      "yara",
+      "signatures"
+    ],
+    "pythonDependencies": ["capstone>=4.0.0", "yara-python"],
+    "urls": {
+      "repository": "https://github.com/ida-community-plugins/mkYARA"
+    },
+    "authors": [{
+      "name": "Jelle Vergeer / Fox-IT"
+    }],
+    "maintainers": [{
+      "name": "Willi Ballenthin",
+      "email": "wballenthin@hex-rays.com"
+    }]
+  }
+}
