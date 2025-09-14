@@ -3,7 +3,7 @@
   "plugin": {
     "name": "mkYARA",
     "entryPoint": "mkyara_plugin.py",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "idaVersions": ">=9.2",
     "description": "Generating YARA rules based on binary code",
     "license": "GPL-3",
@@ -12,7 +12,17 @@
     ],
     "keywords": [
       "yara",
-      "signatures"
+      "signatures",
+      "malware-analysis",
+      "reverse-engineering",
+      "code-generation",
+      "pattern-matching",
+      "disassembly",
+      "automation",
+      "security-research",
+      "executable-analysis",
+      "wildcarding",
+      "binary-analysis"
     ],
     "pythonDependencies": ["capstone>=4.0.0", "yara-python"],
     "urls": {
